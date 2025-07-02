@@ -35,6 +35,28 @@ describe("UseArray test suites", () => {
       });
       expect(renderResult.result.current.array).not.toContain(1);
     });
+
+    it("Should filter elements of Array", () => {
+      const initialArray = [1, 2, 3, 4, 5, 6];
+      const renderResult = renderHook(() => useArray(initialArray));
+      act(() => {
+        renderResult.result.current.filter((n) => n < 5);
+      });
+      expect(renderResult.result.current.array).toEqual([1, 2, 3, 4]);
+    });
+
+    describe("UseArray with strings", () => {
+      it("Should remove elements of array - elements that do not start with uppercase", () => {
+        const initialArray = ["A", "B", "apple", "Map"];
+        const renderResult = renderHook(() => useArray(initialArray));
+        act(() => {
+          renderResult.result.current.filter((word: string) => {
+            return word[0] === word[0].toUpperCase();
+          });
+        });
+        expect(renderResult.result.current.array).toEqual(["A", "B", "Map"]);
+      });
+    });
   });
 });
 /* import { renderHook, act } from "@testing-library/react";
