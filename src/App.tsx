@@ -1,11 +1,16 @@
-//import { AppWithRoutes } from "./components/6Router/AppWithRoutes"
-import { PostWithComment } from "./components/3UserInteraction/PostWithComments";
+// import { ShoppingList1 } from "./components/4Errors/ShoppingList1";
+import { ShoppingList2 } from "./components/4Errors/ShoppingList2";
 
 function App() {
-  // comment
+  const groceries = ["Manzanas", "Pan", "Leche", "Leche"];
+
+  const selectItem = (item: (typeof groceries)[0]) => {
+    console.log("Seleccionado:", item);
+  };
   return (
     <>
-      <PostWithComment content="The sky is blue" user="Alex" />
+      {/* <ShoppingList1 groceries={groceries} selectItem={selectItem} /> */}
+      <ShoppingList2 groceries={groceries} selectItem={selectItem} />
     </>
   );
 }
