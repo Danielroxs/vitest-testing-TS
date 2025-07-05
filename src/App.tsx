@@ -1,18 +1,11 @@
-// import { ShoppingList1 } from "./components/4Errors/ShoppingList1";
-import { ShoppingList2 } from "./components/4Errors/ShoppingList2";
+import { AppWithRoutes } from "./components/6Router/AppWithRoutes";
 
-function App() {
-  const groceries = ["Manzanas", "Pan", "Leche", "Leche"];
-
-  const selectItem = (item: (typeof groceries)[0]) => {
-    console.log("Seleccionado:", item);
-  };
+const App = () => {
   return (
-    <>
-      {/* <ShoppingList1 groceries={groceries} selectItem={selectItem} /> */}
-      <ShoppingList2 groceries={groceries} selectItem={selectItem} />
-    </>
+    <div>
+      <AppWithRoutes />
+    </div>
   );
-}
+};
 
 export default App;
