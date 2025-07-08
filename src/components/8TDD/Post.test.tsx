@@ -14,7 +14,7 @@ describe("Post tests with mocks", () => {
     getCommentsForPostSpy.mockResolvedValueOnce([
       {
         content: "Cool1",
-        date: now,
+        date: now, // commit
       },
       {
         content: "Cool2",
